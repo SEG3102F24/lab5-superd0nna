@@ -1,20 +1,16 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
-import { environment } from './app/environments/environment';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment.development';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app.routes';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 
-// Initialize Firebase app
-const app = initializeApp(environment.firebaseConfig);
-const analytics = getAnalytics(app);
-
-// Check if the app is in production mode
-if (environment.production) {
-  enableProdMode();
-}
-
-// Bootstrap the Angular app with the AppComponent
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore())
+  ]
+})
+  .catch(err => console.error(err));
