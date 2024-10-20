@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators, ReactiveFormsModule } from "@angular/forms";
 import { Router, RouterLink } from "@angular/router";
 import { EmployeeService } from "../service/employee.service";
-import { Employee } from "../employee.model";
+import { Employee } from "../model/employee";
 
 @Component({
     selector: 'app-employee',
@@ -34,24 +34,26 @@ export class EmployeeComponent {
 
   async onSubmit() {
     if (this.employeeForm.valid) {
-      const employee: Employee = new Employee(
-        this.name.value,
-        new Date(this.dateOfBirth.value),
-        this.city.value,
-        this.salary.value,
-        this.gender.value,
-        this.email.value
-      );
+        const employee: Employee = new Employee(
+            this.name.value,
+            new Date(this.dateOfBirth.value),
+            this.city.value,
+            this.salary.value,
+            this.gender.value,
+            this.email.value
+        );
 
-      try {
-        await this.employeeService.addEmployee(employee);
-        console.log('Employee added successfully!');
-        this.employeeForm.reset();
-      } catch (error) {
-        console.error('Error adding employee:', error);
-      }
+        console.log('Constructed Employee:', employee); // Log employee object
+
+        try {
+            await this.employeeService.addEmployee(employee);
+            console.log('Employee added successfully!');
+            this.employeeForm.reset();
+        } catch (error) {
+            console.error('Error adding employee:', error);
+        }
     } else {
-      console.error('Form is invalid');
+        console.error('Form is invalid', this.employeeForm.errors);
     }
   }
 }
