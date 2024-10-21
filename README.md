@@ -12,7 +12,7 @@ Note: I have invited each TA as a member to the firebase using the emails in the
 https://console.firebase.google.com/u/0/project/lab5-8297b/firestore/databases/-default-/data/~2Femployees~2FH67NyT8D32iZYEeWT2wv
 
 below is an image of the databse:
-![alt text](./src/assets/fb-db.png)
+![alt text](/src/assets/fb-db.png)
 
 Thank you!!
 
