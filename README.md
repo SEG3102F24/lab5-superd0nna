@@ -11,7 +11,8 @@ Steps:
 Note: I have invited each TA as a member to the firebase using the emails in the syllabus to grant access. 
 https://console.firebase.google.com/u/0/project/lab5-8297b/firestore/databases/-default-/data/~2Femployees~2FH67NyT8D32iZYEeWT2wv
 
-
+below is an image of the databse:
+<img src='./src/assets/fb-db.png'>
 Thank you!!
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/WrimemQv)
