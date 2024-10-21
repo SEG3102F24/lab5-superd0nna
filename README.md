@@ -3,10 +3,11 @@ Student num: 300 228 396
 
 Steps:
 1. clone the repo (master branch)
-2. npm install
-3. npm run build
-4. ng serve
-5. navigate to the local host address
+2. cd to the lab5-superdonna folder
+3. npm install
+4. npm run build
+5. ng serve
+6. navigate to the local host address
 
 Note: I have invited each TA as a member to the firebase using the emails in the syllabus to grant access. 
 https://console.firebase.google.com/u/0/project/lab5-8297b/firestore/databases/-default-/data/~2Femployees~2FH67NyT8D32iZYEeWT2wv
